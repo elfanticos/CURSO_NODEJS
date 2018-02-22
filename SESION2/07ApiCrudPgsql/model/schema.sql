@@ -1,0 +1,14 @@
+CREATE DATABASE movies
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1;
+
+CREATE TABLE movie(
+ movie_id CHARACTER VARYING(9),
+ tile CHARACTER VARYING(100),
+ release CHARACTER VARYING(4),
+ rating DECIMAL(2,1),
+ image CHARACTER VARYING(255),
+ CONSTRAINT pk_movie PRIMARY KEY(movie_id)
+);

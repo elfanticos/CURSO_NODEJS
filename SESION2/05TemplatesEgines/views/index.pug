@@ -1,0 +1,56 @@
+extends layout.pug
+
+block content
+	article#pug.container
+		h1=title
+		p=descripcion
+	article.container
+		h2 Estructura B&aacute;sica de pug
+		p Este archivo HTML es generado con el motor de plantillas pug
+		p 
+			|Para concatenar contenido
+			|en varias l&iacute;neas
+			|se usa el pipe'|'
+	include logo
+	article.container
+		//Interpolación
+		p.
+			Si te gusta la forma en la pug genera código HTML puede leer la documentaci&oacute;n
+			#[a(href="https://pugjs.org/api/getting-started.html", target="_blank") API], la referencia del #[a(href="https://pugjs.org/api/reference.html", target="_blank") Lenguaje] y de la #[a(href="https://pugjs.org/language/code.html", target="_blank") L&iacute;nea de comandos]
+		br
+		button#presioname.boton Presi&oacute;name
+		script(type="text/javascript").
+			document.querySelector('#presioname').onclick= () => {
+				alert('He presionado el botón desde pug con javascript');
+			}
+		-var nombre = 'Pug';
+		p Hola #{nombre}
+
+		-var fecha = new Date();
+		-var hora  = fecha.getHours();
+
+		if (hora<12)
+			p La hora #{hora} es antes del meridiano (AM)
+		else
+			p La hora #{hora} es posterior del meridiano (PM)
+
+		-var estaciones = ['Verano', 'Otoño', 'Invierno', 'Primevera'];
+
+		h2 Estaciones del Año
+		ol
+			each estacion in estaciones
+				li #{estacion}
+
+	//- Los mixins son funciones en pug
+	mixin mesesEstacionesPeru(estacion,meses)
+		div.item
+			h3 #{estacion}
+			ul
+				each mes in meses
+					li #{mes}
+	article.container
+		h2 Estaciones del a&ntilde;o en Per&uacute;
+		+mesesEstacionesPeru(estaciones[0],['Enero','Febrero'])
+		+mesesEstacionesPeru(estaciones[1],['Marzo','Abril','Mayo'])
+		+mesesEstacionesPeru(estaciones[2],['Junio','Julio','Agosto'])
+		+mesesEstacionesPeru(estaciones[3],['Setiembre','Octubre','Noviembre','Diciembre'])

@@ -1,3 +1,9 @@
 # dependencies
 /SESION2/02ModulosNPM/01SubirArchivo/node_modules
 /SESION2/03Promesas/node_modules
+/SESION2/04Express/00Basicos/node_modules
+/SESION2/04Express/01ContadorVisitas/node_modules
+/SESION2/04Express/02Generador-Express/node_modules
+/SESION2/05TemplatesEgines/node_modules
+/SESION2/06Ghost/node_modules
+/SESION2/07ApiCrudPgsql/node_modules

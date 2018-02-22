@@ -1,0 +1,25 @@
+{
+  "name": "api-crud-pgsql",
+  "version": "0.0.1",
+  "description": "Api CRUD con Postgresql",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "API",
+    "CRUD",
+    "POSTGRESQL"
+  ],
+  "author": "@jmeza",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "pg-promise": "^7.5.4",
+    "pug": "^2.0.0-rc.4",
+    "serve-favicon": "^2.4.5"
+  }
+}
