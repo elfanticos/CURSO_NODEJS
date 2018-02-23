@@ -1,15 +1,8 @@
 'use strict'
 
-var express = require('express'),
-	router  = express.Router();
-
-function pug(req,res,next) {
-	let locals = {
-		title       : 'NUEVO',
-		descripcion : 'también es posible anular un bloque para proporcionar bloques adicionales, como se muestra en el siguiente ejemplo. Como se ve, contentahora expone a sidebary primarybloque para anular. (Alternativamente, la plantilla secundaria podría anular por contentcompleto).'
-	}
-	res.render('index',locals);
-}
+var express    = require('express'),
+	router     = express.Router(),
+    controller = require('../controllers/c_movie');
 
 function error404(req,res,next) {
 	let error = new Error(),
@@ -24,10 +17,7 @@ function error404(req,res,next) {
 }
 
 router
-	.get('/',(req,res) => {
-		res.send('<h1>Terminamos la configuraci&oacute;n de nuestra primer App en Express</h1>');
-	})
-	.get('/pug',pug)
-	.use(error404)
+	.get('/', controller.index)
+	.use(error404);
 
 module.exports = router;
