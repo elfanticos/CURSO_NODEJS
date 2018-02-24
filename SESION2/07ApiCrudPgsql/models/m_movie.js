@@ -2,14 +2,14 @@
 
 var db = require('../server');
 
-function getListMovie(response,error) {
+function getListMovie(response,err) {
 	let sql = `SELECT * FROM movie`;
 	sql = db.pgpromise.as.format(sql);
 	db.conection.any(sql)
 		.then(function(data) {
 			response(data);
 		}).catch(function(error) {
-			error(error.message);
+			response(error);
 		});
 }
 module.exports = {

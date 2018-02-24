@@ -10,3 +10,4 @@ app.listen(app.get('port'), function() {
 });
 
 exports.conection = db;
+exports.pgpromise = pgp;
