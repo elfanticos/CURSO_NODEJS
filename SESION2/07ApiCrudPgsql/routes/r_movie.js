@@ -18,6 +18,11 @@ function error404(req,res,next) {
 
 router
 	.get('/', controller.index)
+	.get('/agregar',controller.addMovie)
+	.post('/registrar', controller.regiMovie)
+	.get('/editar/:movie_id', controller.editMovie)
+	.post('/actualizar/:movie_id', controller.actulizarMovie)
+	.post('/eliminar/:movie_id', controller.deleteMovie)
 	.use(error404);
 
 module.exports = router;
