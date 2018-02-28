@@ -1,0 +1,29 @@
+{
+  "name": "api-crud-pgsql",
+  "version": "0.0.1",
+  "description": "Api REST con Postgresql , Express y Node js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "API",
+    "CRUD",
+    "POSTGRESQL",
+    "REST",
+    "MVC"
+  ],
+  "author": "@jmeza",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-method-override": "0.0.3",
+    "morgan": "^1.9.0",
+    "pg-promise": "^7.5.4",
+    "pug": "^2.0.0-rc.4",
+    "responsimple": "^1.0.1",
+    "serve-favicon": "^2.4.5"
+  }
+}

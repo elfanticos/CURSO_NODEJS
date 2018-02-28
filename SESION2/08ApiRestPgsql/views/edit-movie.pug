@@ -1,0 +1,28 @@
+extends layout
+
+block content
+	section.container
+		div.item.logo
+		div.item
+			h1
+				a(href="/")=title
+			div.item
+				form.form(method="post", action="/actualizar/"+data.movie_id)
+					fieldset
+						div.container.p1
+							label.item.i-b.v-top.ph3.p_25.right(for="movie_id") IMDB id:
+							input.item.i-b.v-top.ph9.p_25#movie_id(type="text", name="movie_id", value=data.movie_id, required)
+						div.container.p1
+							label.item.i-b.v-top.ph3.p_25.right(for="title") Título:
+							input.item.i-b.v-top.ph9.p_25#title(type="text", name="title", value=data.title, required)
+						div.container.p1
+							label.item.i-b.v-top.ph3.p_25.right(for="release") Año:
+							input.item.i-b.v-top.ph9.p_25#release(type="text", name="release", value=data.release, required)
+						div.container.p1
+							label.item.i-b.v-top.ph3.p_25.right(for="rating") Calificación:
+							input.item.i-b.v-top.ph9.p_25#rating(type="text", name="rating", value=data.rating, required)
+						div.container.p1
+							label.item.i-b.v-top.ph3.p_25.right(for="image") Poster:
+							input.item.i-b.v-top.ph9.p_25#image(type="text", name="image", value=data.image, required)
+						div.container.p1
+							input.item.ph4.mauto.button.edit(type="submit",value="Editar")
